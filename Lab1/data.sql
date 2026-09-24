@@ -10,36 +10,36 @@ INSERT INTO clients (
 )
 VALUES
     (
-        'Ivan',
-        'Petrov',
-        '1998-04-15',
+        'Lionel',
+        'Messi',
+        '1987-06-24',
         '4001-100001',
         '+79990000001',
-        'ivan.petrov@example.com'
+        'lionel.messi@example.com'
     ),
     (
-        'Anna',
-        'Smirnova',
-        '2001-09-23',
+        'Cristiano',
+        'Ronaldo',
+        '1985-02-05',
         '4001-100002',
         '+79990000002',
-        'anna.smirnova@example.com'
+        'cristiano.ronaldo@example.com'
     ),
     (
-        'Mikhail',
-        'Sokolov',
-        '1995-12-08',
+        'Michael',
+        'Jackson',
+        '1958-08-29',
         '4001-100003',
         '+79990000003',
-        'mikhail.sokolov@example.com'
+        'michael.jackson@example.com'
     ),
     (
-        'Elena',
-        'Volkova',
-        '2000-06-17',
+        'Donald',
+        'Trump',
+        '1946-06-14',
         '4001-100004',
         '+79990000004',
-        'elena.volkova@example.com'
+        'donald.trump@example.com'
     );
 
 INSERT INTO offices (
