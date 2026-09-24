@@ -13,7 +13,6 @@ transactions,
 cards,
 accounts,
 offices,
-branches,
 clients
 CASCADE;
 
