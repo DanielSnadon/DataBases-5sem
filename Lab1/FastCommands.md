@@ -1,8 +1,11 @@
+### Запуск клиента
+psql -h localhost -U bank_user -d bank_system
+
 ### Запустить схему
 psql -h localhost -U bank_user -d bank_system -f schema.sql
 
-### Запуск клиента
-psql -h localhost -U bank_user -d bank_system
+### Заполнение данными
+psql -h localhost -U bank_user -d bank_system -f data.sql
 
 ### Удаление всех таблиц
 DROP TABLE IF EXISTS
@@ -13,5 +16,8 @@ offices,
 branches,
 clients
 CASCADE;
+
+### Просмотреть все таблицы
+\dt
 
 
