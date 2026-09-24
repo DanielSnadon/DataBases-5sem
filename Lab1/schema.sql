@@ -72,7 +72,7 @@ CREATE TABLE accounts (
         CHECK (account_type IN ('current', 'savings')),
 
     CONSTRAINT accounts_currency_check
-        CHECK (currency IN ('RUB', 'ESD', 'EUR')),
+        CHECK (currency IN ('RUB', 'USD', 'EUR')),
 
     CONSTRAINT accounts_balance_check
         CHECK (balance >= 0),
@@ -125,6 +125,11 @@ CREATE TABLE transactions (
 
     CONSTRAINT transactions_sender_fk
         FOREIGN KEY (sender_account_id)
+        REFERENCES accounts(account_id)
+        ON DELETE RESTRICT,
+
+    CONSTRAINT transactions_receiver_fk
+        FOREIGN KEY (receiver_account_id)
         REFERENCES accounts(account_id)
         ON DELETE RESTRICT,
     
