@@ -19,20 +19,6 @@ offices,
 clients
 CASCADE;
 
-### Проверка связей
-SELECT
-c.client_id,
-c.first_name,
-c.last_name,
-a.account_id,
-a.account_number,
-a.account_type,
-a.balance,
-a.currency
-FROM clients AS c
-JOIN accounts AS a
-ON a.client_id = c.client_id
-ORDER BY c.client_id, a.account_id;
 
 
 
