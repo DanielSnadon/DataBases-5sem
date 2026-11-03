@@ -1,15 +1,15 @@
 SELECT
-    transaction_id,
-    transaction_type,
-    sender_account_id,
-    receiver_account_id
-FROM transactions
-WHERE sender_account_id IS NULL
-    OR receiver_account_id IS NULL
-ORDER BY transaction_id;
-
-SELECT DISTINCT
-    account_type,
-    currency
-FROM accounts
-ORDER BY account_type, currency;
+    c.client_id,
+    c.first_name,
+    c.last_name,
+    a.account_id,
+    a.account_number,
+    a.account_type,
+    a.currency
+FROM clients AS c
+JOIN accounts AS a
+    ON a.client_id = c.client_id
+LEFT JOIN cards AS cr
+    ON cr.account_id = a.account_id
+WHERE cr.card_id IS NULL
+ORDER BY a.account_id;
