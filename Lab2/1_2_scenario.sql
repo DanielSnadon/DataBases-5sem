@@ -162,7 +162,7 @@ COMMIT;
 BEGIN;
 
 UPDATE accounts
-SET balance = balance + 12345.67
+SET balance = balance + 676767.67
 WHERE account_number = '40817810000000000006'
 RETURNING
     account_id,

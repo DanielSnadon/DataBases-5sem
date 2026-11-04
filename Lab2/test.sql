@@ -1,15 +1,8 @@
 SELECT
-    c.client_id,
-    c.first_name,
-    c.last_name,
-    a.account_id,
-    a.account_number,
-    a.account_type,
-    a.currency
-FROM clients AS c
-JOIN accounts AS a
-    ON a.client_id = c.client_id
-LEFT JOIN cards AS cr
-    ON cr.account_id = a.account_id
-WHERE cr.card_id IS NULL
-ORDER BY a.account_id;
+    COUNT(*) AS rub_accounts,
+    SUM(balance) AS total_rub_balance,
+    AVG(balance) AS average_rub_balance,
+    MIN(balance) AS minimum_rub_balance,
+    MAX(balance) AS maximum_rub_balance
+FROM accounts
+WHERE currency = 'RUB';
