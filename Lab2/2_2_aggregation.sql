@@ -48,14 +48,11 @@ ORDER BY total_rub_balance DESC;
 
 SELECT
     DATE_TRUNC('month', t.created_at)::DATE AS operation_month,
-
     COALESCE(
         sa.currency,
         ra.currency
     ) AS currency,
-
     t.transaction_type,
-
     COUNT(*) AS operations_count,
     SUM(t.amount) AS total_amount,
     ROUND(AVG(t.amount), 2) AS average_amount,
