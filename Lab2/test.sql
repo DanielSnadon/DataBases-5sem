@@ -74,3 +74,13 @@
 --  GROUP BY                    SELECT
 --   HAVING                    ORDER BY
 --    ORDER
+
+
+SELECT
+    transaction_type,
+    COUNT(*) AS operations_count,
+    SUM(amount) AS operations_total
+FROM transactions
+WHERE status = 'completed'
+GROUP BY transaction_type
+ORDER BY transaction_type;
